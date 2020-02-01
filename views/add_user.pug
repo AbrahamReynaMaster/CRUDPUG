@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/users/add')
+    .form-group
+      label Nick:
+      input.form-control(name='nick', type='text')
+    .form-group
+      label Nombre:
+      input.form-control(name='name', type='text')
+    .form-group
+      label Apellidos:
+      input.form-control(name='lastname', type='text')
+    .form-group
+      label Password:
+      input.form-control(name='password', type='password')
+    .form-group
+      label Rol:
+      select.form-control(name='rol')
+          option(value='admin') Admin
+          option(value='operador') Operador
+          option(value='administrativo') Administrativo
+    .form-group
+      label Email:
+      input.form-control(name='email', type='email')
+    br
+    input.btn.btn-primary(type='submit', value='Submit')

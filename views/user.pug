@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 #{user.name} #{user.lastname}
+  h5 Rol #{user.rol}
+  p= user.email
+  hr
+  a.btn.btn-default(href='/users/edit/'+user._id) Editar
+  a.btn.btn-danger.delete-user(href='#', data-id=user._id) Borrar

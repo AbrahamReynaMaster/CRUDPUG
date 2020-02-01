@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/users/edit/'+user._id)
+    .form-group
+      label Nick:
+      input.form-control(name='nick', type='text',value=user.nick)
+    .form-group
+      label Nombre:
+      input.form-control(name='name', type='text',value=user.name)
+    .form-group
+      label Apellidos:
+      input.form-control(name='lastname', type='text',value=user.lastname)
+    .form-group
+      label Password:
+      input.form-control(name='password', type='password',value=user.password)
+    .form-group
+      label Rol:
+      select.form-control(name='rol',value=user.rol)
+          option(value='admin') Admin
+          option(value='operador') Operador
+          option(value='administrativo') Administrativo
+    .form-group
+      label Email:
+      input.form-control(name='email', type='email',value=user.email)
+    br
+    input.btn.btn-primary(type='submit', value='Submit')

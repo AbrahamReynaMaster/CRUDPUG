@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1 #{title}
+  ul.list-group
+    each user, i in users
+      li.list-group-item
+        a(href='/users/'+user._id)= user.nick
+  ul.pagination
+    li 
+      a(href='#') 1
+    li 
+      a(href='#') 2
+    li 
+      a(href='#') 3
+    li 
+      a(href='#') 4
+    li 
+      a(href='#') 5
+
+  h1 Usuarios por rol 
+  p Rol Admin: #{counter.admin}
+  p Rol Operador: #{counter.operador}
+  p Rol Administrativos: #{counter.administrativo}
